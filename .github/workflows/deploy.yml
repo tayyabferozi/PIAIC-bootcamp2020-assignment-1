@@ -1,17 +1,14 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Deployment to surge
+name: React App Deploy to Surge
 
-# Controls when the workflow will run
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -22,32 +19,23 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-      
-    - name: Install Node.js
+    
+    - name: Install NodeJS
       uses: actions/setup-node@v2-beta
       with:
         node-version: 12
-
-    - uses: borales/actions-yarn@2.0.0
+    
+    - uses: borales/actions-yarn@v2.0.0
       with:
-        cmd: install
-
-    - name: Bulid React App
+        cmd: install # will run `yarn install` command
+        
+    - name: Build React App
       run: yarn build
-
+      
     - name: Install Surge
       run: npm install --global surge
 
-    - name: surge ./build https://tayyabferozi-bootcamp2020-proj-1.surge.sh/ --secret ${{secrets.SURGE_TOKEN}}
-
-    # Runs a single command using the runners shell
-    - name: Run a one-line script
-      run: echo Hello, world!
-
-    # Runs a set of commands using the runners shell
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+    - name: Deploy to Surge
+      run: surge ./build project003-adil.surge.sh --token ${{ secrets.SURGE_TOKEN }}

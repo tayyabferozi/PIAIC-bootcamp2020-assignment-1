@@ -1,0 +1,176 @@
+$pimary-color: #a683e3;
+$primary-color-dark: #9e72eb;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #e4e9fd;
+  background-image: -webkit-linear-gradient(
+    65deg,
+    $pimary-color 50%,
+    #e4e9fd 50%
+  );
+  min-height: 1000px;
+}
+
+.Box {
+  margin: 1.25rem auto 0;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  padding: 1rem;
+}
+
+#Head {
+  background-color: $pimary-color;
+  text-align: center;
+  color: #fff;
+}
+
+.Body {
+  text-align: center;
+
+  h1 {
+    color: $pimary-color;
+  }
+
+  .MiniBoxes-Wrapper {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .MiniBox {
+      padding: 0.5rem;
+      width: 50%;
+      font-size: 1.25rem;
+
+      h5 {
+        margin-bottom: 0.25rem;
+      }
+
+      &:first-child {
+        border-right: 1px solid white;
+      }
+    }
+  }
+}
+
+.history-list__item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0.5rem;
+  align-items: center;
+  border: 1px solid transparent;
+  // border-color: rgb(232, 232, 232) transparent #ccc transparent;
+  border-color: rgb(240, 240, 240);
+  cursor: pointer;
+  border-right-width: 4px;
+  margin: 5px 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: 0.25s ease;
+
+  &.income {
+    // background-color: #e6faee;
+    border-right-color: #2ecc71;
+  }
+  &.expense {
+    border-right-color: #c0392b;
+    // background-color: #ffe7e4;
+  }
+
+  &:hover {
+    background-color: #fff5f4;
+  }
+}
+
+input {
+  outline: 0;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  padding: 0.625rem;
+  font-size: 1rem;
+  margin: 0.25rem 0;
+  color: #262626;
+  transition: 0.3s ease;
+
+  &::placeholder {
+    color: rgba(65, 65, 65, 0.3);
+  }
+  &:focus {
+    border-color: $pimary-color;
+  }
+}
+
+button#Add {
+  border-radius: 50%;
+  border: 0;
+  font-size: 2rem;
+  background-color: $pimary-color;
+  padding: 0 12px;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+  transition: 0.3s ease;
+
+  &:hover {
+    background-color: $primary-color-dark;
+    box-shadow: 1px 1px 15px -5px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.Input > .Box > .d-flex-around {
+  & > * {
+    width: 50%;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 480px) {
+    flex-direction: column;
+  }
+}
+
+.MiniHeading {
+  font-weight: 1.156rem;
+  font-weight: 500;
+  color: #979797;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.d-flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.d-flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.d-flex-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.text-success {
+  color: #2ecc71;
+}
+
+.text-danger {
+  color: #c0392b;
+}

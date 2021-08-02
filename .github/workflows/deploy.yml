@@ -23,31 +23,31 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+    - uses: actions/checkout@v2
       
-      - name: Install Node.js
-        uses: actions/setup-node@v2-beta
-        with:
-          node-version: 12
-          
-      - uses: borales/actions-yarn@2.0.0
-        with:
-          cmd: install
-          
-      - name: Bulid React App
-        run: yarn build
-        
-      - name: Install Surge
-        run: npm install --global surge
-        
-      - name: surge ./build https://tayyabferozi-bootcamp2020-proj-1.surge.sh/ --secret ${{secrets.SURGE_TOKEN}}
+    - name: Install Node.js
+      uses: actions/setup-node@v2-beta
+      with:
+        node-version: 12
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+    - uses: borales/actions-yarn@2.0.0
+      with:
+        cmd: install
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+    - name: Bulid React App
+      run: yarn build
+
+    - name: Install Surge
+      run: npm install --global surge
+
+    - name: surge ./build https://tayyabferozi-bootcamp2020-proj-1.surge.sh/ --secret ${{secrets.SURGE_TOKEN}}
+
+    # Runs a single command using the runners shell
+    - name: Run a one-line script
+      run: echo Hello, world!
+
+    # Runs a set of commands using the runners shell
+    - name: Run a multi-line script
+      run: |
+        echo Add other actions to build,
+        echo test, and deploy your project.

@@ -145,15 +145,30 @@ button#Add {
   transition: 0.3s ease;
 }
 
+@media screen and (max-width: 480px) {
+  button#Add {
+    margin-top: 1rem;
+  }
+}
+
 button#Add:hover {
   background-color: #9e72eb;
   -webkit-box-shadow: 1px 1px 15px -5px rgba(0, 0, 0, 0.3);
           box-shadow: 1px 1px 15px -5px rgba(0, 0, 0, 0.3);
 }
 
+.Input > .Box > .d-flex-around {
+  margin-top: 0.5rem;
+}
+
 .Input > .Box > .d-flex-around > * {
-  width: 50%;
   text-align: center;
+}
+
+@media screen and (min-width: 480px) {
+  .Input > .Box > .d-flex-around > * {
+    width: 50%;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -166,11 +181,11 @@ button#Add:hover {
 }
 
 .MiniHeading {
-  font-weight: 1.156rem;
+  font-size: 1.156rem;
   font-weight: 500;
   color: #979797;
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .d-flex-center {
@@ -213,6 +228,18 @@ button#Add:hover {
 }
 
 .text-danger {
-  color: #c0392b;
+  color: #c0392b !important;
+}
+
+.msg {
+  color: #979797;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+input.error {
+  border-color: #c0392b !important;
 }
 /*# sourceMappingURL=App.css.map */

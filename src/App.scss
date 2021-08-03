@@ -123,6 +123,9 @@ button#Add {
   cursor: pointer;
   box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
   transition: 0.3s ease;
+  @media screen and (max-width: 480px) {
+    margin-top: 1rem;
+  }
 
   &:hover {
     background-color: $primary-color-dark;
@@ -131,8 +134,12 @@ button#Add {
 }
 
 .Input > .Box > .d-flex-around {
+  margin-top: 0.5rem;
+
   & > * {
-    width: 50%;
+    @media screen and (min-width: 480px) {
+      width: 50%;
+    }
     text-align: center;
   }
 
@@ -142,11 +149,11 @@ button#Add {
 }
 
 .MiniHeading {
-  font-weight: 1.156rem;
+  font-size: 1.156rem;
   font-weight: 500;
   color: #979797;
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .d-flex-center {
@@ -172,5 +179,17 @@ button#Add {
 }
 
 .text-danger {
-  color: #c0392b;
+  color: #c0392b !important;
+}
+
+.msg {
+  color: #979797;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+input.error {
+  border-color: #c0392b !important;
 }

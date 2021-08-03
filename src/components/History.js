@@ -13,6 +13,9 @@ const History = () => {
 
   return (
     <Box heading="HISTORY">
+      {transactions.length > 0 && (
+        <div className="msg">(Tap / click to delete)</div>
+      )}
       {transactions.map((el) => {
         const { id, title, amount } = el;
         return (
